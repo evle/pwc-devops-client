@@ -25,8 +25,8 @@ steps:
 
 - script: |
     yarn build
-    displayName: Build
+  displayName: Build
 
 - script: |
     cp -r build/* /etc/nginx/html
-    displayName: Deploy to UAT
+  displayName: Deploy to UAT
