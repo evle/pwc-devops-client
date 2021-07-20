@@ -30,4 +30,9 @@ steps:
 
 - script: |
     sudo cp -r dist/* /etc/nginx/html
-  displayName: Deploy to UAT
+  displayName: Deploy to UAT Environment
+  condition: eq(variables['Build.Reason'], 'PullRequest')
+  
+- script: |
+    sudo cp -r dist/* /etc/nginx/build
+  displayName: Deploy to Production Environment
