@@ -3,10 +3,10 @@
     <div class="view-account-header"></div>
     <div class="view-account-container">
       <div class="view-account-top">
-        <div class="view-account-top-logo">
-          <img src="~@/assets/images/account-logo.png" alt=""/>
-        </div>
-        <div class="view-account-top-desc">Naive Ui Admin中台前端/设计解决方案</div>
+        <!-- <div class="view-account-top-logo" :style="{display:'flex','justify-content':'center'}">
+          <img src="https://z3.ax1x.com/2021/07/20/WUefUA.png" alt=""/>
+        </div> -->
+        <div class="view-account-top-desc">DevOps 一体化研发平台</div>
       </div>
       <div class="view-account-form">
         <n-form ref="formRef" label-placement="left" size="large" :model="formInline" :rules="rules">
