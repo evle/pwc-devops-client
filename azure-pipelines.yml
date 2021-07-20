@@ -28,5 +28,5 @@ steps:
   displayName: Build
 
 - script: |
-    sudo cp -r build/* /etc/nginx/html
+    sudo cp -r dist/* /etc/nginx/html
   displayName: Deploy to UAT
