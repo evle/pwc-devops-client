@@ -2,6 +2,7 @@ pool: 'Default'
 
 trigger:
 - main
+- releases/*
 
 resources:
 - repo: self
