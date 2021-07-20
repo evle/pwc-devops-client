@@ -1,0 +1,36 @@
+pool: 'Default'
+
+trigger:
+- main
+
+resources:
+- repo: self
+
+  
+steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'web-scanner'
+    scannerMode: 'MSBuild'
+    projectKey: '76a15365af4da5bdbb0713801444e1b867bbabd8'
+
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+     
+- script: |
+    yarn 
+  displayName: Install Dependence
+
+- script: |
+    yarn test
+  displayName: Run Unit Test
+
+- script: |
+    yarn build
+    displayName: Build
+
+- script: |
+    cp -r build/* /etc/nginx/html
+    displayName: Deploy to UAT
