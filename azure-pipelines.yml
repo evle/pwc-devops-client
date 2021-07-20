@@ -16,17 +16,17 @@ steps:
     versionSpec: '14.x'
      
 - script: |
-    sudo yarn 
+    sudo npm i  
   displayName: Install Dependence
 
 - script: |
-    yarn test
+    sudo npm run test
   displayName: Run Unit Test
 
 - script: |
-    yarn build
+    sudo npm run build
   displayName: Build
 
 - script: |
-    cp -r build/* /etc/nginx/html
+    sudo cp -r build/* /etc/nginx/html
   displayName: Deploy to UAT
