@@ -16,7 +16,7 @@ steps:
     versionSpec: '14.x'
      
 - script: |
-    yarn 
+    sudo yarn 
   displayName: Install Dependence
 
 - script: |
