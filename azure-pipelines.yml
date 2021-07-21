@@ -10,7 +10,7 @@ resources:
 steps:
 - script: |
     echo 'SonarCube running'
-    displayName: SonarCube Scanning
+  displayName: SonarCube Scanning
 - task: NodeTool@0
   inputs:
     versionSpec: '14.x'
