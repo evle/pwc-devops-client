@@ -3,9 +3,9 @@
     <div class="view-account-header"></div>
     <div class="view-account-container">
       <div class="view-account-top">
-        <!-- <div class="view-account-top-logo" :style="{display:'flex','justify-content':'center'}">
+        <div class="view-account-top-logo" :style="{display:'flex','justify-content':'center'}">
           <img src="https://z3.ax1x.com/2021/07/20/WUefUA.png" alt=""/>
-        </div> -->
+        </div>
           
         <div class="view-account-top-desc">DevOps 一体化研发平台呀</div>
       </div>
