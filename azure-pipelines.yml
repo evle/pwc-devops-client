@@ -7,36 +7,26 @@ trigger:
 resources:
 - repo: self
 
-jobs:
-- job: UAT
-  condition: eq(variables['Build.Reason'], 'PullRequest')
-  steps:
-  - script: |
-      echo 'SonarCube running'
-      displayName: SonarCube Scanning
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '14.x'
+steps:
+- script: |
+    echo 'SonarCube running'
+    displayName: SonarCube Scanning
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
       
-  - script: |
-      sudo npm i  
-    displayName: Install Dependence
+- script: |
+    sudo npm i  
+  displayName: Install Dependence
 
-  - script: |
-      sudo npm run test
-    displayName: Run Unit Test
+- script: |
+    sudo npm run test
+  displayName: Run Unit Test
 
-  - script: |
-      sudo npm run build
-    displayName: Build
+- script: |
+    sudo npm run build
+  displayName: Build
 
-  - script: |
-      sudo cp -r dist/* /etc/nginx/html
-    displayName: Deploy to UAT Environment
-
-- job: PROD
-  condition: not(eq(variables['Build.Reason'], 'PullRequest'))
-  steps:  
-  - script: |
-      sudo cp -r dist/* /etc/nginx/build
-    displayName: Deploy to Production Environment
+- script: |
+    sudo cp -r dist/* /etc/nginx/html
+  displayName: Deploy to UAT Environment
